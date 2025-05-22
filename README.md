@@ -15,6 +15,7 @@ This project automates the process of sending a daily HTML email digest with top
 ---
 
 ## 🗂️ Folder Structure
+```
 email-digest-airflow/
 ├── airflow/
 │ ├── dags/
@@ -29,7 +30,7 @@ email-digest-airflow/
 ├── .gitignore
 ├── docker-compose.yaml
 └── README.md
-
+```
 ---
 
 ## ⚙️ Getting Started
