@@ -65,13 +65,13 @@ docker compose up --build
 Then access the Airflow UI at:
 👉 http://localhost:8080
 
-Default credentials (set via Airflow 3 standalone):
-🔄 Airflow auto-reloads DAG changes from dags/.
-You can also trigger the DAG manually in the UI or with:
+Default credentials (set via Airflow 3 standalone):  
+🔄 Airflow auto-reloads DAG changes from dags/.  
+You can also trigger the DAG manually in the UI or with:  
 ```bash
 docker exec -it airflow_digest airflow dags trigger news_digest_dag
 ```
-🧾 Step 3: Python Dependencies
+### 🧾 Step 3: Python Dependencies
 These are installed automatically inside Docker via requirements.txt:
 ```
 requests
@@ -82,22 +82,23 @@ If needed, update airflow/requirements.txt and rebuild:
 ```bash
 docker compose build
 ```
-📧 How It Works
-fetch_articles pulls the latest headlines using NewsAPI
+### 📧 How It Works  
+1) fetch_articles pulls the latest headlines using NewsAPI
 
-render_and_send_email uses Jinja2 to render an HTML template
+2) render_and_send_email uses Jinja2 to render an HTML template
 
-Sends the result as a styled email digest using SMTP (TLS)
+3) Sends the result as a styled email digest using SMTP (TLS)
 
-The HTML is rendered from templates/digest_template.html, which you can customize.
+4) The HTML is rendered from templates/digest_template.html, which you can customize.
 
-🧑‍💻 For Developers
-Hot-reload supported:
-Changes in:
-dags/
-utils/
+### 🧑‍💻 For Developers
+Hot-reload supported:  
+Changes in:  
+dags/  
+utils/  
 
-templates/
+templates/  
+
 ...will reflect inside the container immediately if volumes are mounted correctly.
 
 Check inside container:
@@ -139,17 +140,3 @@ Gmail SMTP for mail delivery
 
 🙌 Contributions
 Pull requests welcome!
-Fork the repo → Make your changes → Submit a PR ✨
-
-yaml
-Copy
-Edit
-
----
-
-Let me know if you'd like:
-- A Markdown badge version (Docker, Python, License)
-- GitHub Actions CI/CD setup
-- Project license (MIT, Apache 2.0, etc.) included
-
-Just paste the above into your `README.md`, and you're good to push to GitHub! ✅
