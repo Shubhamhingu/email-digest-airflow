@@ -1,0 +1,10 @@
+# Python + Docker + Airflow
+__pycache__/
+*.pyc
+.env
+airflow/airflow.db
+airflow/webserver_config.py
+logs/
+*.log
+*.sqlite
+*.db
