@@ -43,20 +43,20 @@ email-digest-airflow/
 
 ---
 
-## 🔐 Step 1: Create '.env'
+### 🔐 Step 1: Create '.env'
 
 Create a file named '.env' in the root project directory:
-
+```
 File contents as follows:
 NEWSAPI_KEY=your_newsapi_key
 SMTP_LOGIN=your.email@gmail.com
 SMTP_PASSWORD=your_gmail_app_password
 TO_EMAIL=recipient@example.com
 FROM_EMAIL=your.email@gmail.com
+```
 
 
-
-🐳 Step 2: Run with Docker Compose
+### 🐳 Step 2: Run with Docker Compose
 Run Your Docker Desktop Engine
 ```bash
 docker compose up --build
