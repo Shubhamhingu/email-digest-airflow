@@ -16,4 +16,4 @@ USER airflow
 
 # ✅ Use bash to resolve $PORT at runtime
 ENTRYPOINT ["bash", "-c"]
-CMD ["airflow standalone --port ${PORT:-8080} --host 0.0.0.0"]
+CMD ["airflow standalone"]
