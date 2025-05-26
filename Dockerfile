@@ -14,4 +14,4 @@ EXPOSE 8080
 
 USER airflow
 
-CMD ["airflow", "standalone"]
+CMD ["sh", "-c", "airflow standalone --port $PORT --host 0.0.0.0"]
