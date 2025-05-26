@@ -2,16 +2,17 @@ FROM apache/airflow:3.0.0-python3.11
 
 WORKDIR /opt/airflow
 
-# Install dependencies
+# Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy DAGs and utilities
+# Copy your Airflow assets
 COPY airflow/dags/ dags/
 COPY airflow/utils/ utils/
 COPY airflow/templates/ templates/
 
-# Use Airflow user
+# Set permissions and use Airflow user
 USER airflow
 
+# Run airflow standalone
 CMD ["airflow", "standalone"]
