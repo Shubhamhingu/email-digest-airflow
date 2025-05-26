@@ -2,6 +2,7 @@ FROM apache/airflow:3.0.0-python3.11
 
 WORKDIR /opt/airflow
 
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -9,9 +10,10 @@ COPY airflow/dags/ dags/
 COPY airflow/utils/ utils/
 COPY airflow/templates/ templates/
 
-# Expose port for Render to bind to Airflow UI
 EXPOSE 8080
 
 USER airflow
 
-CMD ["sh", "-c", "airflow standalone --port $PORT --host 0.0.0.0"]
+# ✅ Use bash to resolve $PORT at runtime
+ENTRYPOINT ["bash", "-c"]
+CMD ["airflow standalone --port ${PORT:-8080} --host 0.0.0.0"]
